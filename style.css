@@ -4048,21 +4048,30 @@ footer {
 
     /* Navbar Compression (Increased height for premium feel) */
     .logo img {
-        height: 38px !important;
+        height: 42px !important;
     }
     .nav-container {
-        padding: 18px 20px !important;
+        padding: 20px 24px !important;
+        min-height: 80px !important;
+        display: flex !important;
+        align-items: center !important;
     }
 
     /* HERO REDESIGN (Responsive & Flow) */
     #hero {
-        padding-top: 130px !important;
+        padding-top: 150px !important; /* Space for the taller navbar */
         min-height: auto !important;
         display: block !important;
     }
     
     .hero-content {
         padding: 0 10px !important;
+        pointer-events: none !important; /* Allow touch to pass through to cards */
+        z-index: 5 !important;
+    }
+    
+    .hero-content * {
+        pointer-events: auto !important; /* Re-enable buttons/links inside */
     }
 
     .hero-title {
@@ -4086,7 +4095,7 @@ footer {
         scroll-snap-type: x mandatory;
         gap: 15px;
         -webkit-overflow-scrolling: touch;
-        z-index: 10 !important;
+        z-index: 100 !important; /* Move to top of stack */
         position: relative !important;
         pointer-events: auto !important;
         touch-action: pan-x !important;
