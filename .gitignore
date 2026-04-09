@@ -1,0 +1,8 @@
+Brookah/
+Kunden/
+node_modules/
+.DS_Store
+*.xcf
+Thumbs.db
+.gemini/
+*.log

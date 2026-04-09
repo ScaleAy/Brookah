@@ -178,17 +178,11 @@ const translations = {
         btn_more: "MEHR ANZEIGEN",
         newsletter_title: "NEWSLETTER",
         newsletter_subtitle: "Erhalte exklusive Angebote, Event-Updates und deinen persönlichen Geburtstags-Rabatt.",
-        btn_subscribe: "ABONNIEREN",
-        btn_vip: "ABONNIEREN",
+        btn_subscribe: "ABONNIEREN", btn_vip: "ABONNIEREN",
         newsletter_success: "Erfolgreich zum Newsletter angemeldet.",
-        news_feat_1_title: "Wöchentliches Bundle",
-        news_feat_1_desc: "Lieblingsshisha & Drink zum exklusiven Vorteilspreis.",
-        news_feat_2_title: "Live-Musik Highlights",
-        news_feat_2_desc: "Freitags ab 21 Uhr in erstklassiges Entertainment eintauchen.",
-        news_feat_3_title: "Neu in der Lounge",
-        news_feat_3_desc: "Erfahre zuerst von unseren frisch eingetroffenen Aromen.",
-        news_feat_4_title: "Summer Vibes",
-        news_feat_4_desc: "Erfrischende Momente mit unserem 2-für-1 Aperol Special."
+        rec_title: "Unsere Empfehlung für dich",
+        modal_recommendation_header: "Empfehlung",
+        btn_reroll: "NOCHMAL"
     },
     en: {
         head_title: "Brookah Lounge | Shisha & Bar in Gaildorf",
@@ -196,7 +190,7 @@ const translations = {
         hero_subtitle: "Café · Bar · Lounge · Gaildorf", hero_tagline: "Where the evening begins.", hero_btn: "Discover Hookah", scroll: "Scroll",
         info_hours_title: "Opening Hours", info_hours_desc: "Open daily from 17:00",
         info_address_title: "Address", info_contact_title: "Contact", info_contact_desc: "Bookings via Instagram",
-        shisha_title: "Hookah Menu", shisha_subtitle: "Experience flavor at the highest level.",
+        shisha_title: "Our Hookah Menu", shisha_subtitle: "Experience flavor at the highest level.",
         filter_all: "All", filter_fruity: "Modern", filter_mint: "Traditional",
         filter_strength: "Strength", filter_flavor: "Flavor",
         strength_mild: "Mild", strength_medium: "Medium", strength_strong: "Strong",
@@ -208,7 +202,7 @@ const translations = {
         day_mon: "Monday", day_tue: "Tuesday", day_wed: "Wednesday", day_thu: "Thursday", day_fri: "Friday", day_sat: "Saturday", day_sun: "Sunday",
         contact_title: "Contact", btn_route: "Get Directions", btn_whatsapp: "Book via Instagram",
         insta_subtitle: "Follow us on Instagram", btn_follow: "Follow",
-        footer_slogan: "Where the evening begins.", footer_imprint: "Imprint", footer_privacy: "Privacy",
+        footer_slogan: "Where the evening beings.", footer_imprint: "Imprint", footer_privacy: "Privacy",
         modal_intensity: "Intensity", modal_recommendation: "Drink Pairing", modal_badge: "Category",
         intensity_1: "Very Mild", intensity_2: "Mild", intensity_3: "Medium", intensity_4: "Strong", intensity_5: "Intense",
         lang_cat_modern: "Modern", lang_cat_traditionell: "Traditional",
@@ -224,17 +218,19 @@ const translations = {
         btn_more: "SHOW MORE",
         newsletter_title: "NEWSLETTER",
         newsletter_subtitle: "Get exclusive offers, event updates and your personal birthday discount.",
-        btn_subscribe: "SUBSCRIBE",
-        btn_vip: "SUBSCRIBE",
+        btn_subscribe: "SUBSCRIBE", btn_vip: "SUBSCRIBE",
         newsletter_success: "Successfully subscribed to the newsletter.",
-        news_feat_1_title: "Weekly Bundle",
-        news_feat_1_desc: "Your favorite shisha & drink at an exclusive price.",
-        news_feat_2_title: "Live Music Highlights",
-        news_feat_2_desc: "Fridays from 9 PM. Immerse yourself in top-tier entertainment.",
-        news_feat_3_title: "New in the Lounge",
-        news_feat_3_desc: "Be the first to experience our newly arrived flavors.",
-        news_feat_4_title: "Summer Vibes",
-        news_feat_4_desc: "Refreshing moments with our seasonal 2-for-1 Aperol special."
+        rec_title: "Recommended For You",
+        modal_recommendation_header: "Recommendation",
+        btn_reroll: "RETRY",
+        filter_fruity_pill: "MODERN",
+        filter_mint_pill: "TRADITIONAL",
+        filter_mild: "MILD",
+        filter_strong: "STRONG",
+        filter_exotic: "EXOTIC",
+        filter_recommendation: "RECOMMENDATION",
+        btn_skip_to_drinks: "Directly to Drinks",
+        hero_btn_shisha: "Shisha Menu"
     },
     tr: {
         head_title: "Brookah Lounge | Shisha & Bar in Gaildorf",
@@ -242,9 +238,11 @@ const translations = {
         hero_subtitle: "Kafe · Bar · Lounge · Gaildorf", hero_tagline: "Akşamın başladığı yer.", hero_btn: "Nargileleri Keşfet", scroll: "Kaydır",
         info_hours_title: "Açılış Saatleri", info_hours_desc: "Her gün 17:00'den itibaren açık",
         info_address_title: "Adres", info_contact_title: "İletişim", info_contact_desc: "Instagram üzerinden rezervasyon",
+        shisha_title: "Nargile Menümüz", shisha_subtitle: "Premium tütün, mükemmel lüleler. En üst düzey lezzeti deneyimleyin.",
         filter_all: "Hepsi", filter_strength: "Sertlik", filter_flavor: "Aroma",
         strength_mild: "Hafif", strength_medium: "Orta", strength_strong: "Sert",
         flavor_all: "Tüm Aromalar", flavor_fruity: "Meyveli", flavor_fresh: "Taze", flavor_sweet: "Tatlı", flavor_cool: "Soğuk", flavor_exotic: "Egzotik", flavor_citrus: "Narenciye",
+        drinks_title: "İçecek Menüsü", drinks_subtitle: "Ferahlatıcı, klasik veya yaratıcı karışımlar.",
         tab_cocktails: "Kokteyller", tab_softdrinks: "Soğuk İçecekler", tab_hot: "Sıcak İçecekler", tab_beer: "Bira", tab_mixed: "Longdrinkler", tab_shots: "Shotlar", tab_bottles: "Şişeler",
         hours_title: "Çalışma Saatleri",
         snacks_title: "Baguetteler & Atıştırmalıklar", snacks_subtitle: "Küçük bir açlık için.",
@@ -255,7 +253,7 @@ const translations = {
         modal_intensity: "Yoğunluk", modal_recommendation: "İçecek Önerisi", modal_badge: "Kategori",
         intensity_1: "Çok Hafif", intensity_2: "Hafif", intensity_3: "Orta", intensity_4: "Sert", intensity_5: "Çok Sert",
         lang_cat_modern: "Modern", lang_cat_traditionell: "Geleneksel",
-        social_label: "SOSYAL", social_title: "INSTAGRAM", social_desc: "Bizi Instagram'dan takip edin.", social_follow: "FOLLOW US",
+        social_label: "SOSYAL", social_title: "INSTAGRAM", social_desc: "Bizi Instagram'dan takip edin.", social_follow: "TAKİP ET",
         head_brand: "BROOKAH",
         shisha_price_label: "her biri 15,00 €",
         feat_1_title: "Premium Nargileler", feat_1_desc: "30'dan fazla özel çeşit ve mükemmel hazırlanmış lüleler.",
@@ -263,7 +261,15 @@ const translations = {
         feat_3_title: "Modern Ambiyans", feat_3_desc: "Zarif tasarım rahat lounge atmosferiyle buluşuyor.",
         feat_4_title: "VIP Rezervasyon", feat_4_desc: "Instagram üzerinden yerinizi ayırtın.",
         feat_1_btn: "MENÜYÜ GÖR", feat_2_btn: "LİSTEYİ GÖR", feat_3_btn: "GALERİYİ GÖR", feat_4_btn: "ŞİMDİ REZERVASYON YAP",
-        filter_category: "Kategori", contact_name: "Brookah Lounge", contact_address_label: "Karlstraße 12, 74405 Gaildorf"
+        filter_category: "Kategori", contact_name: "Brookah Lounge", contact_address_label: "Karlstraße 12, 74405 Gaildorf",
+        btn_more: "DAHA FAZLA GÖSTER",
+        newsletter_title: "BÜLTEN",
+        newsletter_subtitle: "Özel teklifler, etkinlik güncellemeleri ve kişisel doğum günü indiriminizden haberdar olun.",
+        btn_subscribe: "ABONE OL", btn_vip: "ABONE OL",
+        newsletter_success: "Bültene başarıyla kaydoldunuz.",
+        rec_title: "Sizin İçin Önerimiz",
+        modal_recommendation_header: "Öneri",
+        btn_reroll: "YENİDEN"
     },
     es: {
         head_title: "Brookah Lounge | Shisha & Bar in Gaildorf",
@@ -292,7 +298,15 @@ const translations = {
         feat_3_title: "Ambiente Moderno", feat_3_desc: "Diseño elegante en una atmósfera acogedora.",
         feat_4_title: "Reserva VIP", feat_4_desc: "Asegura tu lugar a través de Instagram.",
         feat_1_btn: "VER MENÚ", feat_2_btn: "VER CARTA", feat_3_btn: "VER GALERÍA", feat_4_btn: "RESERVAR AHORA",
-        filter_category: "Categoría", contact_name: "Brookah Lounge", contact_address_label: "Karlstraße 12, 74405 Gaildorf"
+        filter_category: "Categoría", contact_name: "Brookah Lounge", contact_address_label: "Karlstraße 12, 74405 Gaildorf",
+        filter_fruity_pill: "MODERNO",
+        filter_mint_pill: "TRADICIONAL",
+        filter_mild: "SUAVE",
+        filter_strong: "FUERTE",
+        filter_exotic: "EXÓTICO",
+        filter_recommendation: "RECOMENDACIÓN",
+        btn_skip_to_drinks: "Directo a Bebidas",
+        hero_btn_shisha: "Carta de Shishas"
     },
     ar: {
         head_title: "Brookah Lounge | Shisha & Bar in Gaildorf",
@@ -321,7 +335,15 @@ const translations = {
         feat_3_title: "الأجواء", feat_3_desc: "تصميم عصري يلتقي بأجواء اللاونج المريحة.",
         feat_4_title: "حجز VIP", feat_4_desc: "احجز مكانك حصرياً عبر إنستغرام.",
         feat_1_btn: "عرض القائمة", feat_2_btn: "عرض القائمة", feat_3_btn: "عرض المعرض", feat_4_btn: "احجز الآن",
-        filter_category: "فئة", contact_name: "Brookah Lounge", contact_address_label: "Karlstraße 12, 74405 جيلدورف"
+        filter_category: "فئة", contact_name: "Brookah Lounge", contact_address_label: "Karlstraße 12, 74405 جيلدورف",
+        filter_fruity_pill: "عصري",
+        filter_mint_pill: "تقليدي",
+        filter_mild: "خفيف",
+        filter_strong: "قوي",
+        filter_exotic: "غريب",
+        filter_recommendation: "توصية",
+        btn_skip_to_drinks: "مباشرة إلى المشروبات",
+        hero_btn_shisha: "قائمة الشيشة"
     }
 };
 
@@ -346,6 +368,14 @@ function init() {
 
         // 5. Mobile Nav Init
         initMobileNav();
+        
+        // 6. Anti-Zoom Protection (iOS/Android)
+        document.addEventListener('touchstart', (e) => {
+            if (e.touches.length > 1) e.preventDefault();
+        }, { passive: false });
+        document.addEventListener('gesturestart', (e) => {
+            e.preventDefault();
+        });
     } catch (e) {
         console.error("Brookah: Initialization Error:", e);
         // Emergency Reveal
@@ -484,7 +514,7 @@ function renderShishas() {
                         <div class="intensity">
                             <div class="intensity-dots">${dotsTemplate}</div>
                         </div>
-                        <span class="shisha-price">15,00 €</span>
+                        <span class="shisha-price">${dict.shisha_price_label || '15,00 €'}</span>
                     </div>
                 </div>
             </div>
@@ -564,7 +594,7 @@ function renderShishaComposition(container, s, drinks) {
         <div class="side-pairing-card left">
             <img src="${drinks[0].img || 'cold_drink.png'}" alt="${drinks[0].name}">
             <div class="side-info">
-                <h4>Empfehlung</h4>
+                <h4>${dict.modal_recommendation_header || 'Empfehlung'}</h4>
                 <h3>${drinks[0].name}</h3>
             </div>
         </div>
@@ -599,7 +629,7 @@ function renderShishaComposition(container, s, drinks) {
         <div class="side-pairing-card right">
             <img src="${drinks[1].img || 'cold_drink.png'}" alt="${drinks[1].name}">
             <div class="side-info">
-                <h4>Empfehlung</h4>
+                <h4>${dict.modal_recommendation_header || 'Empfehlung'}</h4>
                 <h3>${drinks[1].name}</h3>
             </div>
         </div>
@@ -1048,7 +1078,7 @@ function generateRecommendation() {
     if (cardBottom) {
         const rerollBtn = document.createElement('button');
         rerollBtn.className = 'btn btn-gold';
-        rerollBtn.innerText = 'NOCHMAL';
+        rerollBtn.innerText = translations[currentLang].btn_reroll || 'NOCHMAL';
         rerollBtn.style.position = 'relative';
         rerollBtn.style.width = '100%';
         rerollBtn.style.marginTop = '15px';

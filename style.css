@@ -1,3 +1,7 @@
+html, body { 
+    touch-action: pan-x pan-y; 
+    -webkit-text-size-adjust: 100%;
+}
 :root {
     --bg-color: #030303; /* Super dark */
     --gold: #e8c97a; /* Brookah warm gold */
@@ -401,12 +405,13 @@ nav.scrolled {
         overflow-y: hidden;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
-        width: 100vw;
+        width: 100%;
         height: auto;
         min-height: 85vh;
         padding: 5vh 5vw;
         gap: 15px;
         -webkit-overflow-scrolling: touch;
+        box-sizing: border-box;
     }
     
     .modal-composition-wrapper::-webkit-scrollbar {
@@ -414,7 +419,7 @@ nav.scrolled {
     }
 
     .side-pairing-card {
-        flex: 0 0 calc(100vw - 40px);
+        flex: 0 0 calc(100% - 40px);
         scroll-snap-align: center;
         max-width: 320px;
         height: 65vh;
@@ -424,7 +429,7 @@ nav.scrolled {
     }
     
     .shisha-card-main {
-        flex: 0 0 calc(100vw - 30px);
+        flex: 0 0 calc(100% - 30px);
         scroll-snap-align: center;
         max-width: 360px;
         height: 70vh;
@@ -456,82 +461,35 @@ nav.scrolled {
     overflow: hidden;
 }
 
-.hero-static-bg {
+#hero-video {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-image: url('hintergrundbg.png'); /* Desktop Default */
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-    animation: bgMovement 30s linear infinite alternate;
-}
-
-@media (max-width: 768px) {
-    .hero-static-bg {
-        background-image: url('HintergrundBGHandy.png'); /* Handy Optimiert */
-    }
-}
-
-@keyframes bgMovement {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1) translate(-20px, -10px); }
-}
-
-/* --- Smoke Animation Effect --- */
-.smoke-wrap {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    overflow: hidden;
-    z-index: 2;
-    pointer-events: none;
-    mix-blend-mode: screen;
-}
-
-.smoke-item {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
-    filter: blur(80px);
-    opacity: 0;
-}
-
-.s1 { animation: smokeDrift 20s linear infinite; }
-.s2 { animation: smokeDrift 35s linear reverse infinite; animation-delay: -5s; }
-.s3 { animation: smokeDrift 50s ease-in-out infinite alternate; animation-delay: -10s; }
-
-/* Floor Smoke (Bottom Smoke) */
-.smoke-floor {
-    position: absolute;
-    bottom: -100px;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    filter: blur(40px);
-    opacity: 0.8;
-}
-
-.smoke-cloud {
-    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
     height: 100%;
-    background: radial-gradient(ellipse at bottom, rgba(255,255,255,0.15) 0%, transparent 70%);
-    animation: floorSmoke 12s ease-in-out infinite alternate;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
-@keyframes floorSmoke {
-    0% { transform: translateX(-10%) translateY(0); opacity: 0.3; }
-    50% { opacity: 0.6; }
-    100% { transform: translateX(10%) translateY(-20px); opacity: 0.3; }
+.hero-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 2;
 }
 
-@keyframes smokeDrift {
-    0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
-    20% { opacity: 0.5; }
-    80% { opacity: 0.5; }
-    100% { transform: translate(-10%, -5%) rotate(360deg); opacity: 0; }
+/* --- Content remains on top --- */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* --- Shisha Smoke Emitters --- */
@@ -4048,5 +4006,117 @@ footer {
     }
     .shisha-hover-detail {
         display: none !important; /* Hide the detail bar on mobile as info is already on card */
+    }
+}
+
+
+/* ============================================================== 
+   MOBILE OPTIMIZATION (LAG KILLER & RESPONSIVENESS)
+   ============================================================== */
+@media (max-width: 992px) {
+    /* Kill all lag-inducing filters globally */
+    * {
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+        transition-duration: 0.1s !important; /* Faster transitions for responsiveness */
+    }
+    
+    /* Disable Video on Mobile to save GPU/CPU */
+    #hero-video {
+        display: none !important;
+    }
+    
+    .hero-video-overlay {
+        background: linear-gradient(to bottom, rgba(5,5,5,0.7) 0%, rgba(17,17,17,0.95) 100%), url('Brookahbild1_opt.jpg') center/cover no-repeat !important;
+        z-index: 2;
+    }
+
+    /* Fixed Background colors to replace missing blur */
+    .modal-overlay, .nav-container, .shisha-skip-btn, .rec-modal-content, .mobile-nav, .lang-menu {
+        background: rgba(10, 10, 10, 0.98) !important;
+    }
+
+    /* Navbar Compression */
+    .logo img {
+        height: 28px !important;
+    }
+    .nav-container {
+        padding: 8px 16px !important;
+    }
+
+    /* HERO REDESIGN (Responsive & Flow) */
+    #hero {
+        padding-top: 100px !important;
+        min-height: auto !important;
+        display: block !important;
+    }
+    
+    .hero-content {
+        padding: 0 10px !important;
+    }
+
+    .hero-title {
+        font-size: 2.2rem !important;
+        letter-spacing: 5px !important;
+        margin-bottom: 20px !important;
+        text-align: center;
+    }
+
+    .cards-wrapper {
+        display: flex !important;
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        flex-wrap: nowrap !important;
+        transform: none !important;
+        margin: 0 !important;
+        padding: 10px 20px 30px !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        min-height: 480px !important;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .cards-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .feature-card {
+        flex: 0 0 280px !important;
+        width: 280px !important;
+        min-height: 400px !important;
+        margin: 0 !important;
+        scroll-snap-align: center;
+        transform: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 20px !important;
+    }
+
+    /* Remove fan-forced rotations */
+    .card-rotate-far-left, .card-rotate-left, .card-rotate-right, .card-rotate-far-right {
+        transform: none !important;
+    }
+
+    .fc-content h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    .fc-content p {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* Specific small screen adjustment */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem !important;
+    }
+    .feature-card {
+        flex: 0 0 260px !important;
+        width: 260px !important;
     }
 }

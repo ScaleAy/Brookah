@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <script>document.documentElement.classList.add('js-enabled');</script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title data-i18n="head_title">Brookah Lounge | Shisha & Bar in Gaildorf</title>
     <meta name="description" content="Brookah Lounge – Premium Shisha, Cocktails und Café in Gaildorf. Wo der Abend beginnt.">
     
@@ -94,30 +94,10 @@
 
     <!-- HERO -->
     <section id="hero">
-        <!-- Premium Background with Smoke Animation -->
-        <div class="hero-static-bg">
-            <div class="smoke-wrap">
-                <div class="smoke-item s1"></div>
-                <div class="smoke-item s2"></div>
-                <div class="smoke-item s3"></div>
-            </div>
-            <div class="smoke-floor">
-                <div class="smoke-cloud"></div>
-            </div>
-            
-            <!-- Shisha Smoke Emitters -->
-            <div class="smoke-emitter shisha-left-bowl">
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="smoke-emitter shisha-right-bowl">
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="smoke-emitter hose-smoke">
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-
-            <div class="hero-overlay"></div>
-        </div>
+        <video autoplay muted loop playsinline id="hero-video" poster="Brookahbild1_opt.jpg" src="BrookahHomeVideo.mov">
+            <source src="BrookahHomeVideo.mov" type="video/quicktime">
+        </video>
+        <div class="hero-video-overlay"></div>
         <div class="container hero-content" style="width: 100%; max-width: 1300px;">
             <h1 class="hero-title reveal" data-i18n="head_brand" style="text-shadow: 0 10px 30px rgba(0,0,0,0.8); font-family: 'Cormorant Garamond', serif; font-weight: 700; letter-spacing: 12px; font-size: 6rem;">BROOKAH</h1>
             
@@ -170,7 +150,7 @@
             </div>
             
             <div class="hero-actions reveal" style="text-align: center; width: 100%; margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                <a href="#shisha" class="hero-main-btn">Shisha Karte</a>
+                <a href="#shisha" class="hero-main-btn" data-i18n="hero_btn_shisha">Shisha Karte</a>
                 <a href="#getraenke" class="hero-main-btn" data-i18n="nav_drinks">Getränke</a>
             </div>
         </div>
@@ -209,14 +189,14 @@
             <!-- Modern Pill Filter System -->
             <div class="pill-filter-bar reveal">
                 <div class="pill-scroll-container">
-                    <button class="pill-btn active" data-pill="all">ALLE</button>
-                    <button class="pill-btn" data-pill="fruity">FRUCHTIG</button>
-                    <button class="pill-btn" data-pill="mint">MINZE</button>
-                    <button class="pill-btn" data-pill="traditional">KLASSISCH</button>
-                    <button class="pill-btn" data-pill="mild">MILD</button>
-                    <button class="pill-btn" data-pill="strong">STARK</button>
-                    <button class="pill-btn" data-pill="exotic">EXOTISCH</button>
-                    <button class="pill-btn empf-btn" id="shisha-rec-trigger">
+                    <button class="pill-btn active" data-pill="all" data-i18n="filter_all">ALLE</button>
+                    <button class="pill-btn" data-pill="fruity" data-i18n="filter_fruity_pill">MODERN</button>
+                    <button class="pill-btn" data-pill="mint" data-i18n="filter_mint_pill">TRADITIONELL</button>
+                    <button class="pill-btn" data-pill="traditional" data-i18n="filter_traditional">KLASSISCH</button>
+                    <button class="pill-btn" data-pill="mild" data-i18n="filter_mild">MILD</button>
+                    <button class="pill-btn" data-pill="strong" data-i18n="filter_strong">STARK</button>
+                    <button class="pill-btn" data-pill="exotic" data-i18n="filter_exotic">EXOTISCH</button>
+                    <button class="pill-btn empf-btn" id="shisha-rec-trigger" data-i18n="filter_recommendation">
                         EMPFEHLUNG
                     </button>
                 </div>
@@ -227,7 +207,7 @@
             </div>
     
     <div class="shisha-skip-wrapper">
-        <button id="shisha-skip-btn" class="shisha-skip-btn">
+        <button id="shisha-skip-btn" class="shisha-skip-btn" data-i18n="btn_skip_to_drinks">
             Direkt zu den Getränken
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
         </button>
