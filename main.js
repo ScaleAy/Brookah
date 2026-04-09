@@ -376,6 +376,9 @@ function init() {
         document.addEventListener('gesturestart', (e) => {
             e.preventDefault();
         });
+
+        // 7. Performance: Image Preloading
+        initImagePreloading();
     } catch (e) {
         console.error("Brookah: Initialization Error:", e);
         // Emergency Reveal
@@ -656,6 +659,16 @@ function openModal(s) {
     if(modal) {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Mobile: Ensure the main shisha card is centered first (Swipe Left/Right for drinks)
+        if (window.innerWidth < 900 && container) {
+            requestAnimationFrame(() => {
+                const mainCard = container.querySelector('.shisha-card-main');
+                if (mainCard) {
+                    mainCard.scrollIntoView({ behavior: 'auto', inline: 'center', block: 'nearest' });
+                }
+            });
+        }
     }
 }
 
@@ -1411,8 +1424,35 @@ function initSkipButton() {
 initSkipButton();
 
 // ======================================================
-// SNACK ADDITIVES POPUP LOGIC
+// PERFORMANCE: IMAGE PRELOADING
 // ======================================================
+function initImagePreloading() {
+    console.log("Brookah: Starting background image preloading...");
+    const imagesToPreload = [];
+
+    // 1. Shisha Images
+    if (typeof shishas !== 'undefined') {
+        shishas.forEach(s => {
+            if (s.image) imagesToPreload.push(s.image);
+        });
+    }
+
+    // 2. High Priority Drinks (Top items of each category)
+    const topDrinkImages = [
+        'Erstecardcola.png', 'Eisteecard.png', 'redbull.png', 
+        'mojitoohnealk.png', 'coconutkiss.png', 'teinacherlimo.png',
+        '28Black.png', 'ElephantBayCard.png'
+    ];
+    topDrinkImages.forEach(img => imagesToPreload.push(img));
+
+    // Execute Preload
+    imagesToPreload.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+    console.log(`Brookah: Preloading ${imagesToPreload.length} assets.`);
+}
+
 const globalAdditiveBtn = document.getElementById('btn-snack-additives');
 const globalAdditiveInfo = document.getElementById('snack-additive-info');
 

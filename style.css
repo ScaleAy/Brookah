@@ -399,41 +399,51 @@ nav.scrolled {
 
 @media (max-width: 900px) {
     .modal-composition-wrapper {
-        flex-direction: row;
-        justify-content: flex-start;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        width: 100%;
-        height: auto;
-        min-height: 85vh;
-        padding: 5vh 5vw;
-        gap: 15px;
-        -webkit-overflow-scrolling: touch;
-        box-sizing: border-box;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        scroll-snap-type: x mandatory !important;
+        scroll-behavior: smooth !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 70vh !important;
+        max-height: 600px !important;
+        padding: 2.5vh 5vw !important;
+        gap: 15px !important;
+        -webkit-overflow-scrolling: touch !important;
+        box-sizing: border-box !important;
     }
     
     .modal-composition-wrapper::-webkit-scrollbar {
-        display: none;
+        display: none !important;
     }
 
     .side-pairing-card {
-        flex: 0 0 calc(100% - 40px);
-        scroll-snap-align: center;
-        max-width: 320px;
-        height: 65vh;
+        display: flex !important;
+        flex: 0 0 280px !important;
+        width: 280px !important;
+        max-width: 80vw !important;
+        height: 60vh !important;
+        min-height: 480px !important;
+        scroll-snap-align: center !important;
         /* Disable 3D transforms on mobile so they map correctly in horizontal scroll */
         transform: perspective(1000px) rotateY(0) translateX(0) scale(1) !important;
-        opacity: 0.85;
+        opacity: 0.9 !important;
+        margin: 0 !important;
     }
     
     .shisha-card-main {
-        flex: 0 0 calc(100% - 30px);
-        scroll-snap-align: center;
-        max-width: 360px;
-        height: 70vh;
+        display: flex !important;
+        flex: 0 0 320px !important;
+        width: 320px !important;
+        max-width: 90vw !important;
+        height: 65vh !important;
+        min-height: 520px !important;
+        scroll-snap-align: center !important;
         transform: perspective(1000px) rotateY(0) translateX(0) scale(1) !important;
+        margin: 0 !important;
     }
 }
 
@@ -4036,17 +4046,17 @@ footer {
         background: rgba(10, 10, 10, 0.98) !important;
     }
 
-    /* Navbar Compression */
+    /* Navbar Compression (Increased height for premium feel) */
     .logo img {
-        height: 28px !important;
+        height: 38px !important;
     }
     .nav-container {
-        padding: 8px 16px !important;
+        padding: 18px 20px !important;
     }
 
     /* HERO REDESIGN (Responsive & Flow) */
     #hero {
-        padding-top: 100px !important;
+        padding-top: 130px !important;
         min-height: auto !important;
         display: block !important;
     }
@@ -4076,6 +4086,10 @@ footer {
         scroll-snap-type: x mandatory;
         gap: 15px;
         -webkit-overflow-scrolling: touch;
+        z-index: 10 !important;
+        position: relative !important;
+        pointer-events: auto !important;
+        touch-action: pan-x !important;
     }
     
     .cards-wrapper::-webkit-scrollbar {
