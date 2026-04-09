@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <script>document.documentElement.classList.add('js-enabled');</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="head_title">Brookah Lounge | Shisha & Bar in Gaildorf</title>
+    <meta name="description" content="Brookah Lounge – Premium Shisha, Cocktails und Café in Gaildorf. Wo der Abend beginnt.">
+    
+    <meta property="og:title" content="Brookah Lounge | Premium Shisha in Gaildorf">
+    <meta property="og:description" content="Brookah Lounge – Wo der Abend beginnt. Entdecke unsere Shisha- und Getränkekarte.">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23e8c97a'/></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bilder Preload für massiven Speed-Boost ! -->
+    <link rel="preload" as="image" href="Brookahbild1_opt.jpg">
+    <link rel="preload" as="image" href="brookahbild2_opt.jpg">
+    <link rel="preload" as="image" href="brooakhbild34_opt.jpg">
+    <link rel="preload" as="image" href="brookahbild4_opt.jpg">
+    <link rel="preload" as="image" href="brookahbild5_opt.jpg">
+    
+    <link rel="stylesheet" href="style.css?v=2.3">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <!-- Left: Logo -->
+            <a href="#" class="logo">
+                <img src="header_top-Photoroom_opt.png" alt="Logo" style="height: 38px; display: block; filter: drop-shadow(0 0 10px rgba(255, 235, 0, 0.2));">
+            </a>
+
+
+
+            <!-- Right: Action & Mobile -->
+            <div class="nav-right">
+                <div class="lang-dropdown">
+                    <button class="btn-lang" id="lang-btn">
+                        <img src="https://flagcdn.com/w40/de.png" style="width:18px;height:13px;margin-right:8px;border-radius:2px;object-fit:cover;" id="current-lang-flag" alt="DE">
+                        <span id="current-lang-code">DE</span> 
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="lang-chevron" stroke="currentColor" stroke-width="2" style="margin-left: 4px;"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="lang-menu" id="lang-menu">
+                        <div class="lang-option" data-lang="de">
+                            <img src="https://flagcdn.com/w40/de.png" width="18" height="13" alt="DE" style="object-fit:cover;"> Deutsch
+                        </div>
+                        <div class="lang-option" data-lang="en">
+                            <img src="https://flagcdn.com/w40/gb.png" width="18" height="13" alt="EN" style="object-fit:cover;"> English
+                        </div>
+                        <div class="lang-option" data-lang="tr">
+                            <img src="https://flagcdn.com/w40/tr.png" width="18" height="13" alt="TR" style="object-fit:cover;"> Türkçe
+                        </div>
+                        <div class="lang-option" data-lang="es">
+                            <img src="https://flagcdn.com/w40/es.png" width="18" height="13" alt="ES" style="object-fit:cover;"> Español
+                        </div>
+                        <div class="lang-option" data-lang="ar">
+                            <img src="https://flagcdn.com/w40/ae.png" width="18" height="13" alt="AR" style="object-fit:cover;"> العربية
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Center: Pill Navigation -->
+        <div class="pill-nav">
+            <a href="#hero" class="nav-link active" data-i18n="nav_home">Home</a>
+            <a href="#shisha" class="nav-link" data-i18n="nav_shisha">Shisha</a>
+            <a href="#getraenke" class="nav-link" data-i18n="nav_drinks">Getränke</a>
+            <a href="#oeffnungszeiten" class="nav-link" data-i18n="nav_hours">Öffnungszeiten</a>
+            <a href="#instagram" class="nav-link" data-i18n="nav_insta">Instagram</a>
+        </div>
+
+        <!-- Mobile Navigation Overlay -->
+        <div class="mobile-nav" id="mobile-nav">
+             <button id="mobile-nav-close" class="mobile-nav-close">&times;</button>
+             <a href="#hero" class="nav-link-m" data-i18n="nav_home">Home</a>
+             <a href="#shisha" class="nav-link-m" data-i18n="nav_shisha">Shisha</a>
+             <a href="#getraenke" class="nav-link-m" data-i18n="nav_drinks">Getränke</a>
+             <a href="#oeffnungszeiten" class="nav-link-m" data-i18n="nav_hours">Öffnungszeiten</a>
+             <a href="#instagram" class="nav-link-m" data-i18n="nav_insta">Instagram</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <!-- Premium Background with Smoke Animation -->
+        <div class="hero-static-bg">
+            <div class="smoke-wrap">
+                <div class="smoke-item s1"></div>
+                <div class="smoke-item s2"></div>
+                <div class="smoke-item s3"></div>
+            </div>
+            <div class="smoke-floor">
+                <div class="smoke-cloud"></div>
+            </div>
+            
+            <!-- Shisha Smoke Emitters -->
+            <div class="smoke-emitter shisha-left-bowl">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="smoke-emitter shisha-right-bowl">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="smoke-emitter hose-smoke">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content" style="width: 100%; max-width: 1300px;">
+            <h1 class="hero-title reveal" data-i18n="head_brand" style="text-shadow: 0 10px 30px rgba(0,0,0,0.8); font-family: 'Cormorant Garamond', serif; font-weight: 700; letter-spacing: 12px; font-size: 6rem;">BROOKAH</h1>
+            
+            <div class="cards-wrapper">
+                
+                <!-- Card 1 -->
+                <div class="feature-card card-rotate-far-left" style="background: linear-gradient(to top, rgba(10,9,7,0.95) 0%, rgba(10,9,7,0.3) 100%), url('Brookahbild1_opt.jpg') center/cover no-repeat;">
+                    <div class="fc-shine"></div>
+                    <div class="fc-number">01</div>
+                    <div class="fc-content">
+                        <h3 data-i18n="feat_1_title">Premium Shishas</h3>
+                        <p data-i18n="feat_1_desc">Höchste Qualität, intensive Aromen und dichter Rauch für vollendeten Genuss.</p>
+                        <a href="#shisha" class="fc-btn" data-i18n="feat_1_btn">Menü ansehen <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="feature-card card-rotate-left" style="background: linear-gradient(to top, rgba(10,9,7,0.95) 0%, rgba(10,9,7,0.3) 100%), url('brooakhbild34_opt.jpg') center/cover no-repeat;">
+                    <div class="fc-shine"></div>
+                    <div class="fc-number">02</div>
+                    <div class="fc-content">
+                        <h3 data-i18n="feat_2_title">Signature Drinks</h3>
+                        <p data-i18n="feat_2_desc">Handgemachte Cocktails und exklusive Erfrischungen für unvergessliche Nächte.</p>
+                        <a href="#getraenke" class="fc-btn" data-i18n="feat_2_btn">Zur Karte <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="feature-card card-rotate-right" style="background: linear-gradient(to top, rgba(10,9,7,0.95) 0%, rgba(10,9,7,0.3) 100%), url('brookahbild2_opt.jpg') center/cover no-repeat;">
+                    <div class="fc-shine"></div>
+                    <div class="fc-number">03</div>
+                    <div class="fc-content">
+                        <h3 data-i18n="feat_3_title">Modernes Ambiente</h3>
+                        <p data-i18n="feat_3_desc">Elegantes Design trifft auf pure Gemütlichkeit – deine perfekte Auszeit.</p>
+                        <a href="#instagram" class="fc-btn" data-i18n="feat_3_btn">Galerie ansehen <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="feature-card card-rotate-far-right" style="background: linear-gradient(to top, rgba(10,9,7,0.95) 0%, rgba(10,9,7,0.3) 100%), url('brookahbild4_opt.jpg') center/cover no-repeat;">
+                    <div class="fc-shine"></div>
+                    <div class="fc-number">04</div>
+                    <div class="fc-content">
+                        <h3 data-i18n="feat_4_title">VIP Reservierung</h3>
+                        <p data-i18n="feat_4_desc">Sichere dir deinen Platz ganz unkompliziert und exklusiv über Instagram.</p>
+                        <a href="https://www.instagram.com/brookah_lounge/" target="_blank" class="fc-btn" data-i18n="feat_4_btn">Jetzt reservieren <span class="arrow">→</span></a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="hero-actions reveal" style="text-align: center; width: 100%; margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="#shisha" class="hero-main-btn">Shisha Karte</a>
+                <a href="#getraenke" class="hero-main-btn" data-i18n="nav_drinks">Getränke</a>
+            </div>
+        </div>
+        <div class="scroll-indicator new-scroll">
+            <div class="scroll-pulsing-line"></div>
+        </div>
+
+    </section>
+
+    <div id="infobar" class="reveal">
+        <div class="container infobar-grid">
+            <div class="info-item">
+                <h4 data-i18n="info_hours_title">Öffnungszeiten</h4>
+                <p data-i18n="info_hours_desc">Täglich ab 17:00</p>
+            </div>
+            <div class="info-item">
+                <h4 data-i18n="info_address_title">Adresse</h4>
+                <p>Karlstr. 12, Gaildorf</p>
+            </div>
+            <a href="https://www.instagram.com/brookah_lounge/" target="_blank" class="info-item-link">
+                <h4 data-i18n="feat_4_title">Reservierung</h4>
+                <p>Instagram @brookah_lounge</p>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- SHISHA SECTION -->
+    <section id="shisha">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title" data-i18n="shisha_title">Unsere Shisha-Karte</h2>
+                <p style="color: var(--text-muted);" data-i18n="shisha_subtitle">Premium Tabak, perfekte Köpfe. Erlebe Geschmack auf höchstem Niveau.</p>
+            </div>
+
+            <!-- Modern Pill Filter System -->
+            <div class="pill-filter-bar reveal">
+                <div class="pill-scroll-container">
+                    <button class="pill-btn active" data-pill="all">ALLE</button>
+                    <button class="pill-btn" data-pill="fruity">FRUCHTIG</button>
+                    <button class="pill-btn" data-pill="mint">MINZE</button>
+                    <button class="pill-btn" data-pill="traditional">KLASSISCH</button>
+                    <button class="pill-btn" data-pill="mild">MILD</button>
+                    <button class="pill-btn" data-pill="strong">STARK</button>
+                    <button class="pill-btn" data-pill="exotic">EXOTISCH</button>
+                    <button class="pill-btn empf-btn" id="shisha-rec-trigger">
+                        EMPFEHLUNG
+                    </button>
+                </div>
+            </div>
+
+            <div class="shisha-grid" id="shisha-grid">
+                <!-- Javascript will populate this -->
+            </div>
+    
+    <div class="shisha-skip-wrapper">
+        <button id="shisha-skip-btn" class="shisha-skip-btn">
+            Direkt zu den Getränken
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </button>
+    </div>
+
+            <div class="shisha-grid-footer reveal">
+                <p class="universal-price-line">Alle Sorten · <span class="shisha-price-gold">15,00 €</span> · inkl. Kohle & Kopf</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GETRÄNKE SECTION -->
+    <section id="getraenke">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title" data-i18n="drinks_title">Getränkekarte</h2>
+                <p style="color: var(--text-muted);" data-i18n="drinks_subtitle">Erfrischend, klassisch oder kreativ gemixt.</p>
+            </div>
+
+            <div class="tabs reveal">
+                <div class="tab-indicator"></div>
+                <button class="tab-btn active" data-tab="softdrinks" data-i18n="tab_softdrinks">Softdrinks</button>
+                <button class="tab-btn" data-tab="cocktails" data-i18n="tab_cocktails">Cocktails</button>
+                <button class="tab-btn" data-tab="hot" data-i18n="tab_hot">Kaffee & Tee</button>
+                <button class="tab-btn" data-tab="beer_wine" data-i18n="tab_beer_wine">Bier & Wein</button>
+            </div>
+
+            <div class="menu-container reveal">
+                <!-- Softdrinks -->
+                <div class="menu-content active" id="softdrinks">
+                </div>
+
+                <!-- Cocktails -->
+                <div class="menu-content" id="cocktails">
+                </div>
+
+                <!-- Kaffee & Tee -->
+                <div class="menu-content" id="hot">
+                </div>
+
+                <!-- Bier & Wein -->
+                <div class="menu-content" id="beer_wine">
+                </div>
+            </div>
+            <div id="drinks-show-more-container" class="show-more-wrapper reveal">
+                <button id="btn-drinks-show-more" class="pill-btn" data-i18n="btn_more">MEHR ANZEIGEN</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SNACKS SECTION -->
+    <section id="snacks" class="menu-section">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="snacks_title">Snacks</h2>
+                <p style="color: var(--text-muted);" data-i18n="snacks_subtitle">Für den kleinen Hunger zwischendurch.</p>
+            </div>
+            
+            <div class="menu-container">
+                <div class="menu-list snack-list">
+                    <div class="menu-item show-item snack-clickable" data-snack="sucuk" style="cursor: pointer; opacity: 1; transform: none;"><span class="menu-item-name">Sucuk Baguette</span><span class="menu-item-price">6,00 €</span></div>
+                    <div class="menu-item show-item snack-clickable" data-snack="putenbrust" style="cursor: pointer; opacity: 1; transform: none;"><span class="menu-item-name">Putenbrust Baguette</span><span class="menu-item-price">6,00 €</span></div>
+                    <div class="menu-item show-item snack-clickable" data-snack="kaese" style="cursor: pointer; opacity: 1; transform: none;"><span class="menu-item-name">Käse Baguette</span><span class="menu-item-price">5,50 €</span></div>
+                    <div class="menu-item show-item snack-clickable" data-snack="kebap" style="cursor: pointer; opacity: 1; transform: none;"><span class="menu-item-name">Kebap-Style Baguette</span><span class="menu-item-price">6,50 €</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- NEWSLETTER / VIP SECTION -->
+    <section id="newsletter" class="reveal">
+        <div class="container">
+            <div class="newsletter-club-content">
+                <h3 data-i18n="newsletter_title">NEWSLETTER</h3>
+                <div class="newsletter-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-dot"></span>
+                        <span class="benefit-text">Exklusive Angebote</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-dot"></span>
+                        <span class="benefit-text">Event-Updates</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-dot"></span>
+                        <span class="benefit-text">Geburtstags-Rabatt</span>
+                    </div>
+                </div>
+
+                <div class="newsletter-action-area">
+                    <form id="newsletter-form" class="newsletter-form-premium" onsubmit="event.preventDefault(); submitNewsletter();">
+                        <div class="newsletter-input-group">
+                            <input type="text" id="newsletter-name" placeholder="Vorname" required>
+                            <input type="email" id="newsletter-email" placeholder="E-Mail" required>
+                            <input type="text" id="newsletter-birthday" placeholder="Geburtstag" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                        </div>
+                        <button type="submit" class="newsletter-btn-club" data-i18n="btn_vip">ABONNIEREN</button>
+                    </form>
+                    <div id="newsletter-success" class="newsletter-message" style="display: none;">
+                        <span class="check">✓</span> <span data-i18n="newsletter_success">Erfolgreich angemeldet.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SECTION (OR SOCIAL) -->
+
+    <!-- ÖFFNUNGSZEITEN & ANFAHRT -->
+    <section id="oeffnungszeiten" class="info-section">
+        <div class="container contact-grid reveal">
+            <div class="hours-col">
+                <h3 data-i18n="hours_title">Öffnungszeiten</h3>
+                <table class="hours-table" id="hours-table">
+                    <tr data-day="1"><td data-i18n="day_mon">Montag</td><td>17:00 – 00:00</td></tr>
+                    <tr data-day="2"><td data-i18n="day_tue">Dienstag</td><td>17:00 – 00:00</td></tr>
+                    <tr data-day="3"><td data-i18n="day_wed">Mittwoch</td><td>17:00 – 00:00</td></tr>
+                    <tr data-day="4"><td data-i18n="day_thu">Donnerstag</td><td>17:00 – 00:00</td></tr>
+                    <tr data-day="5"><td data-i18n="day_fri">Freitag</td><td>17:00 – 03:00</td></tr>
+                    <tr data-day="6"><td data-i18n="day_sat">Samstag</td><td>17:00 – 03:00</td></tr>
+                    <tr data-day="0"><td data-i18n="day_sun">Sonntag</td><td>17:00 – 00:00</td></tr>
+                </table>
+            </div>
+            <div class="address-col">
+                <h3 data-i18n="contact_title">Anfahrt & Kontakt</h3>
+                <div class="map-card">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2616.7909385078516!2d9.768631!3d49.001923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479860b2eb2bb1a9!2sKarlstra%C3%9Fe%2012%2C%2074405%20Gaildorf!5e0!3m2!1sen!2sde!4v1700000000000!5m2!1sen!2sde" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="map-overlay-content">
+                        <div class="contact-card-label-on-map">
+                            <p><strong data-i18n="contact_name">Brookah Lounge</strong> &nbsp;|&nbsp; <span data-i18n="contact_address_label">Karlstraße 12, 74405 Gaildorf</span></p>
+                        </div>
+                        <div class="address-actions map-overlay-actions">
+                            <a href="https://maps.google.com/?q=Karlstraße+12,+74405+Gaildorf" target="_blank" class="btn btn-gold" data-i18n="btn_route">Route planen</a>
+                            <a href="https://www.instagram.com/brookah_lounge/" target="_blank" class="btn btn-outline" data-i18n="btn_instagram">Reservieren</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL SECTION -->
+    <section id="instagram" class="social-section">
+        <div class="container reveal">
+            <div class="social-container">
+                <div class="social-header">
+                    <div class="social-header-text">
+
+                        <h2 class="social-maintitle">INSTAGRAM</h2>
+
+                    </div>
+
+                </div>
+                
+                <div class="social-cards">
+                    <!-- Brookah Lounge Card -->
+                    <a href="https://www.instagram.com/brookah_lounge/" target="_blank" class="social-card brookah-card">
+                        <div class="instagram-logo-img-wrapper">
+                            <img src="brookahlogoinsta_opt.jpeg" alt="Brookah Lounge Logo" class="insta-custom-logo" loading="lazy">
+                        </div>
+                        <h3>BROOKAH LOUNGE</h3>
+                        <div class="insta-handle">@BROOKAH_LOUNGE</div>
+                    </a>
+                    
+                    <!-- Kebabhaus Card -->
+                    <a href="https://www.instagram.com/gdfpizzakebaphaus/" target="_blank" class="social-card kebab-card">
+                        <div class="instagram-logo-img-wrapper">
+                            <img src="kebabhauslogo_opt.jpeg" alt="Pizza & Kebaphaus Logo" class="insta-custom-logo" loading="lazy">
+                        </div>
+                        <h3>PIZZA- & KEBAPHAUS</h3>
+                        <div class="insta-handle">@GDFPIZZAKEBAPHAUS</div>
+                    </a>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">BROOKAH</div>
+            <div class="footer-links">
+                <a href="#" onclick="openImpressum(); return false;" data-i18n="footer_imprint">Impressum</a>
+                <a href="#" onclick="openDatenschutz(); return false;" data-i18n="footer_privacy">Datenschutz</a>
+            </div>
+            <div class="copyright">
+                © 2026 Brookah Lounge · Gaildorf
+            </div>
+        </div>
+    </footer>
+    
+    <!-- STICKY INSTAGRAM -->
+    <a href="https://www.instagram.com/brookah_lounge/" class="insta-sticky" target="_blank" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+    </a>
+
+
+
+    <!-- SNACK MODAL -->
+    <div class="modal-overlay" id="snack-modal">
+        <div class="modal-content premium-modal" id="snack-modal-content">
+            <div class="modal-visual" id="snack-modal-visual">
+                <button id="btn-snack-additives" class="btn-additive-toggle" style="position: absolute; top: 15px; left: 15px; z-index: 20; padding: 6px 12px; font-size: 0.7rem; background: rgba(0,0,0,0.6); color: white; border: 1px solid rgba(255,255,255,0.2); border-radius: 6px; backdrop-filter: blur(5px);">ZUSATZSTOFFE</button>
+                <button class="modal-close-btn" id="snack-modal-close">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" stroke-width="2.5" fill="none"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+            </div>
+            
+            <div class="modal-body" id="snack-modal-body" style="padding: 30px;">
+                <h2 class="modal-flavor-name" id="snack-modal-title" style="font-size: 2rem; margin-bottom: 5px; text-align: center;">Snack Name</h2>
+                <p class="modal-description" id="snack-modal-desc" style="color: rgba(255,255,255,0.6); margin-bottom: 20px; text-align: center;">Beschreibung hier...</p>
+                
+                <div id="snack-additive-area" style="margin-bottom: 25px;">
+                    <div id="snack-additive-info" class="snack-additive-info">
+                        <!-- JS injected -->
+                    </div>
+                </div>
+
+                <div class="modal-recommendation-section" style="margin-top: 15px; background: transparent; border: none; padding: 0;">
+                    <h5 data-i18n="modal_recommendation" style="text-align: center; margin-bottom: 12px; color: var(--gold); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">Getränke-Empfehlung</h5>
+                    <div class="pairing-images-container" id="snack-modal-pairing-container" style="display: flex; justify-content: center; gap: 15px;">
+                        <!-- JS injected -->
+                    </div>
+                </div>
+                
+                <div class="modal-footer-cta" style="margin-top: 30px; display: flex; justify-content: center;">
+                    <div class="modal-price-display">
+                        <span class="price-val" id="snack-modal-price" style="font-size: 1.5rem; color: var(--gold); font-weight: 700;">6,00 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SHISHA MODAL -->
+    <div class="modal-overlay" id="shisha-modal">
+        <div class="modal-composition-wrapper" id="shisha-modal-composition">
+            <!-- JS populated: Side Card Left | Main Card | Side Card Right -->
+        </div>
+    </div>
+
+    <!-- SHISHA RECOMMENDATION MODAL -->
+    <div id="shisha-rec-modal" class="modal-overlay">
+        <div class="modal-composition-wrapper" id="shisha-rec-composition">
+            <!-- JS populated: Side Card Left | Main Card | Side Card Right -->
+        </div>
+    </div>
+
+    <!-- DRINK MODAL -->
+    <div class="modal-overlay" id="drink-modal">
+        <div class="modal-content premium-modal">
+            <div class="modal-visual" id="drink-modal-visual">
+                <button class="modal-close-btn" id="drink-modal-close" onclick="closeModal()">
+                    <svg viewBox="0 0 24 24" width="18" height="18" stroke="white" stroke-width="2.5" fill="none"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                </button>
+                <div class="modal-flavor-emoji" id="drink-modal-emoji">🥤</div>
+            </div>
+            
+            <div class="modal-body">
+                <h2 class="modal-flavor-name" id="drink-modal-title">Cola</h2>
+                <p class="modal-description" id="drink-modal-desc">
+                    Classic & erfrischend
+                </p>
+
+                <div class="modal-footer-cta">
+                    <div class="modal-price-display">
+                        <span class="price-val" id="drink-modal-price">3,50 €</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN SCRIPT -->
+    <!-- SHISHA RECOMMENDATION MODAL -->
+    <div id="shisha-rec-modal" class="modal-overlay">
+        <div class="modal-content rec-modal-content">
+            <button id="shisha-rec-close" class="modal-close-btn">&times;</button>
+            <div class="rec-modal-inner">
+                <div class="rec-header">
+                    <h2 data-i18n="rec_title">UNSERE EMPFEHLUNG</h2>
+                </div>
+
+                <div id="rec-shisha-container" class="rec-shisha-card">
+                    <!-- Populated by JS -->
+                </div>
+
+                <div class="rec-actions">
+                    <button id="shisha-rec-reroll" class="btn btn-gold">NOCHMAL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- IMPRESSUM MODAL -->
+    <div id="impressum-modal" class="legal-modal-overlay" onclick="if(event.target===this)closeLegalModal('impressum-modal')">
+        <div class="legal-modal-content" onclick="event.stopPropagation()">
+            <button class="legal-modal-close" onclick="closeLegalModal('impressum-modal')">×</button>
+            <div class="legal-modal-inner">
+                <h2>IMPRESSUM</h2>
+                <div class="legal-section">
+                    <h4>Betreiber</h4>
+                    <p>Brookah Lounge</p>
+                    <p>Karlstr. 12<br>74405 Gaildorf</p>
+                    <p style="margin-top:10px;">Besitzer: <em style="color:rgba(255,255,255,0.4)">—</em></p>
+                </div>
+                <div class="legal-divider"></div>
+                <h4 style="margin-bottom:20px;">Kontakt</h4>
+                <form id="contact-form" class="contact-form-modal" onsubmit="event.preventDefault(); submitContactForm();">
+                    <div class="contact-form-row">
+                        <input type="text" id="contact-name" placeholder="Dein Name" required>
+                        <input type="email" id="contact-email" placeholder="Deine E-Mail" required>
+                    </div>
+                    <input type="text" id="contact-subject" placeholder="Betreff">
+                    <textarea id="contact-message" placeholder="Deine Nachricht..." rows="4" required></textarea>
+                    <button type="submit" class="contact-submit-btn">NACHRICHT SENDEN</button>
+                    <div id="contact-success" style="display:none;color:#00ff88;text-align:center;margin-top:15px;">✓ Nachricht gesendet!</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- DATENSCHUTZ MODAL -->
+    <div id="datenschutz-modal" class="legal-modal-overlay" onclick="if(event.target===this)closeLegalModal('datenschutz-modal')">
+        <div class="legal-modal-content">
+            <button class="legal-modal-close" onclick="closeLegalModal('datenschutz-modal')">×</button>
+            <div class="legal-modal-inner">
+                <h2>DATENSCHUTZ</h2>
+                <div class="legal-section">
+                    <h4>1. Allgemeine Hinweise</h4>
+                    <p>Diese Website wird betrieben von der Brookah Lounge, Karlstr. 12, 74405 Gaildorf. Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst.</p>
+                </div>
+                <div class="legal-divider"></div>
+                <div class="legal-section">
+                    <h4>2. Daten­erhebung auf dieser Website</h4>
+                    <p>Diese Website erhebt keine persönlichen Daten automatisch. Lediglich beim Newsletter-Abonnement oder der Kontaktaufnahme werden Ihre Daten (Name, E-Mail, Geburtstag) lokal gespeichert und ausschließlich für das Lounge-Management verwendet.</p>
+                </div>
+                <div class="legal-divider"></div>
+                <div class="legal-section">
+                    <h4>3. Newsletter & Kontakt</h4>
+                    <p>Mit Ihrer Einwilligung (Newsletter-Formular) erheben und verarbeiten wir Ihre E-Mail-Adresse und optionale Daten (Name, Geburtstag) ausschließlich für den Versand von Informationen zu Angeboten und Events der Brookah Lounge.</p>
+                </div>
+                <div class="legal-divider"></div>
+                <div class="legal-section">
+                    <h4>4. Cookies & Speicherung</h4>
+                    <p>Diese Website nutzt <strong>localStorage</strong> des Browsers zur rein lokalen Speicherung von Einstellungen. Es werden keine Tracking-Cookies oder externe Analysedienste eingesetzt.</p>
+                </div>
+                <div class="legal-divider"></div>
+                <div class="legal-section">
+                    <h4>5. Ihre Rechte</h4>
+                    <p>Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer Daten. Kontaktieren Sie uns jederzeit über das Kontaktformular im Impressum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js?v=3.0"></script>
+    <script src="legal.js?v=3.0"></script>
+</body>
+</html>

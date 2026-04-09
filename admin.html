@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brookah Lounge | Admin Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --admin-accent: #e0e0e0;
+            --admin-dark: #070707;
+            --admin-glass: rgba(10, 10, 10, 0.95);
+        }
+
+        body.admin-body {
+            background: var(--admin-dark);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 30px 15px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .admin-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, #151515 0%, #070707 100%);
+            z-index: -1;
+        }
+
+        .login-card {
+            background: var(--admin-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 50px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+            text-align: center;
+            transition: all 0.5s ease;
+        }
+
+        .login-card h1 {
+            font-family: 'Marcellus', serif;
+            color: var(--admin-accent);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            letter-spacing: 4px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--admin-accent);
+            background: rgba(255,255,255,0.06);
+        }
+
+        .admin-btn {
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            background: var(--admin-accent);
+            color: #000;
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            margin-top: 10px;
+        }
+
+        .admin-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+        }
+
+        #dashboard-view {
+            display: none;
+            width: 95%;
+            max-width: 860px;
+            background: var(--admin-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 35px;
+            border-radius: 24px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 600px) {
+            #dashboard-view {
+                width: 100%;
+                padding: 25px 18px;
+                border-radius: 16px;
+            }
+            .control-grid { grid-template-columns: 1fr; }
+            body.admin-body { padding: 15px 10px; }
+        }
+
+        .dash-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 20px;
+        }
+
+        .dash-header h2 {
+            font-family: 'Marcellus', serif;
+            color: var(--admin-accent);
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .logout-link {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .logout-link:hover { color: #fff; }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .control-grid { grid-template-columns: 1fr; }
+        }
+
+        .control-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 16px;
+        }
+
+        .control-card h3 {
+            margin-top: 0;
+            font-size: 1.1rem;
+            color: var(--admin-accent);
+            margin-bottom: 20px;
+        }
+
+        .switch-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input { opacity: 0; width: 0; height: 0; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #222;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider { background-color: var(--admin-accent); }
+        input:checked + .slider:before { transform: translateX(26px); }
+
+        .status-text {
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        textarea {
+            width: 100%;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            color: #fff;
+            padding: 12px;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .save-indicator {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #00ff88;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .save-indicator.show { opacity: 1; }
+
+        /* Custom Confirm Modal */
+        .admin-modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(15px);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .admin-modal-overlay.active { display: flex; }
+
+        .confirm-card {
+            background: var(--admin-glass);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.8);
+        }
+
+        .confirm-card h3 {
+            font-family: 'Marcellus', serif;
+            color: var(--admin-accent);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .confirm-card p {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .confirm-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-cancel {
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn-delete {
+            background: #ff4757;
+            color: #fff;
+            box-shadow: 0 10px 20px rgba(255, 71, 87, 0.2);
+        }
+    </style>
+</head>
+<body class="admin-body">
+    <div class="admin-bg"></div>
+
+    <!-- Login View -->
+    <div id="login-view" class="login-card">
+        <h1>ADMIN</h1>
+        <div class="form-group">
+            <label>Benutzername</label>
+            <input type="text" id="username" placeholder="Name">
+        </div>
+        <div class="form-group">
+            <label>Passwort</label>
+            <input type="password" id="password" placeholder="Passwort">
+        </div>
+        <button class="admin-btn" onclick="handleLogin()">Login</button>
+        <div id="login-error" style="color: #ff4757; margin-top: 15px; font-size: 0.85rem; display: none;">Falsche Daten</div>
+    </div>
+
+    <!-- Dashboard View -->
+    <div id="dashboard-view" class="dashboard-card">
+        <div class="dash-header">
+            <h2>Management Console</h2>
+            <a href="#" class="logout-link" onclick="handleLogout()">Logout</a>
+        </div>
+
+        <div class="control-grid">
+            <div class="control-card">
+                <h3>Website Online</h3>
+                <div class="switch-container">
+                    <label class="switch">
+                        <input type="checkbox" id="status-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="status-text" id="status-label">ONLINE</span>
+                </div>
+            </div>
+
+            <div class="control-card">
+                <h3>Urlaub Overlay</h3>
+                <div class="form-group">
+                    <label>Nachricht</label>
+                    <textarea id="vacation-msg" placeholder="Wir sind im Urlaub..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Wiedereröffnung</label>
+                    <input type="datetime-local" id="reopen-date">
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW: Newsletter Management Section -->
+        <div class="control-card" style="margin-top: 30px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="margin: 0;">Newsletter Abonnenten</h3>
+                <button class="admin-btn" style="width: auto; padding: 10px 25px; margin: 0; font-size: 0.8rem;" onclick="downloadSubscribers()">CSV DOWNLOAD</button>
+            </div>
+            <div style="max-height: 300px; overflow-y: auto; background: rgba(0,0,0,0.2); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+                    <thead style="background: rgba(255,255,255,0.05); color: var(--admin-accent);">
+                        <tr>
+                            <th style="padding: 12px 20px;">Name</th>
+                            <th style="padding: 12px 20px;">E-Mail Adresse</th>
+                            <th style="padding: 12px 20px;">Geburtstag</th>
+                            <th style="padding: 12px 20px;">Datum</th>
+                            <th style="padding: 12px 20px; text-align: right;">Aktion</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subscriber-list-body">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="control-card" style="margin-top: 30px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="margin: 0;">Kontaktanfragen</h3>
+                <button class="admin-btn" style="width: auto; padding: 10px 20px; margin: 0; font-size: 0.75rem;" onclick="clearContactMessages()">LEEREN</button>
+            </div>
+            <div id="contact-messages-list" style="display:flex; flex-direction:column; gap:12px;">
+                <!-- Populated by admin.js -->
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; text-align: center;">
+            <button class="admin-btn" style="width: auto; padding: 16px 60px;" onclick="saveSettings()">Speichern</button>
+            <div id="save-indicator" class="save-indicator">✓ Gespeichert!</div>
+        </div>
+    </div>
+
+    <!-- Custom Confirmation Modal -->
+    <div id="confirm-modal" class="admin-modal-overlay">
+        <div class="confirm-card">
+            <h3 id="confirm-title">Bist du sicher?</h3>
+            <p id="confirm-msg">Diese Aktion kann nicht rückgängig gemacht werden.</p>
+            <div class="confirm-actions">
+                <button class="admin-btn btn-cancel" onclick="closeConfirmModal()">Abbrechen</button>
+                <button class="admin-btn btn-delete" id="confirm-yes-btn">Löschen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js?v=3.0"></script>
+</body>
+</html>
