@@ -4029,6 +4029,15 @@ footer {
 /* ============================================================== 
    MOBILE OPTIMIZATION (LAG KILLER & RESPONSIVENESS)
    ============================================================== */
+/* Hide Scrollbars Globally for a clean look */
+* {
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+
 @media (max-width: 992px) {
     /* Optimization: Natural transitions and essential glass effects */
     * {
@@ -4060,10 +4069,15 @@ footer {
         height: 34px !important;
     }
     .nav-container {
-        padding: 12px 20px !important;
+        padding: 12px 28px !important; /* Move burger bar away from edge */
         min-height: 64px !important;
         display: flex !important;
         align-items: center !important;
+    }
+
+    /* Hide the pulsating vertical line on mobile to prevent button overlap */
+    .scroll-pulsing-line {
+        display: none !important;
     }
 
     /* Ensure the container doesn't overflow and allows horizontal scrolling */
