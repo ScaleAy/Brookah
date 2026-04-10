@@ -4032,7 +4032,15 @@ footer {
 @media (max-width: 992px) {
     /* Optimization: Natural transitions and essential glass effects */
     * {
-        transition-duration: 0.3s !important; /* Smoother, natural luxury feel */
+        transition-duration: 0.3s !important;
+    }
+    
+    /* Disable all "shine" and "sweep" diagonal lines on mobile */
+    .fc-shine, .feature-card::after, .feature-card::before, 
+    .brookah-card::after, .kebab-card::after,
+    [class*="shine"], [class*="sweep"] {
+        display: none !important;
+        animation: none !important;
     }
     
     .nav-container, .mobile-nav, .lang-menu, .modal-content, .shisha-skip-btn {
@@ -4058,11 +4066,21 @@ footer {
         align-items: center !important;
     }
 
+    /* Ensure the container doesn't overflow and allows horizontal scrolling */
+    .container, .hero-content {
+        max-width: 100vw !important;
+        width: 100% !important;
+        padding: 0 !important;
+        overflow-x: hidden !important; 
+    }
+
     /* HERO REDESIGN (Responsive & Flow) */
     #hero {
-        padding-top: 100px !important; /* Adjusted for the smaller navbar */
+        padding-top: 100px !important;
         min-height: auto !important;
         display: block !important;
+        width: 100%;
+        overflow: hidden;
     }
     
     .hero-content {
@@ -4089,18 +4107,19 @@ footer {
         flex-wrap: nowrap !important;
         transform: none !important;
         margin: 0 !important;
-        padding: 10px 20px 40px !important;
+        padding: 10px 15px 40px !important;
         overflow-x: auto !important;
         overflow-y: hidden !important;
         min-height: 480px !important;
+        width: 100% !important;
         scroll-snap-type: x mandatory !important;
-        gap: 20px !important;
+        gap: 15px !important;
         -webkit-overflow-scrolling: touch !important;
         z-index: 100 !important;
         position: relative !important;
         pointer-events: auto !important;
-        touch-action: pan-x pan-y !important; /* RESTORED: Allows vertical page scrolling */
-        scroll-padding-left: 20px;
+        touch-action: pan-x pan-y !important;
+        scroll-padding-left: 15px;
     }
     
     .cards-wrapper::-webkit-scrollbar {
