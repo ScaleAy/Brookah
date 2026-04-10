@@ -904,6 +904,7 @@ const drinksData = {
         { name: "Cappuccino", price: "3,50 €", desc: "Espresso & Milchschaum" },
         { name: "Latte Macchiato", price: "4,00 €", desc: "Mild & cremig" },
         { name: "Türkischer Kaffee", price: "3,50 €", desc: "Traditionell gekocht" },
+        { name: "Cay", price: "1,50 €", desc: "Schwarztee im Glas" },
         { name: "Tee", price: "3,00 €", desc: "Verschiedene Sorten" }
     ],
     beer_wine: [

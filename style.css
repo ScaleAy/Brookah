@@ -314,7 +314,7 @@ nav.scrolled {
 
 /* Mobile Hamburger */
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
@@ -349,6 +349,33 @@ nav.scrolled {
 
 .mobile-nav.active {
     right: 0;
+}
+
+.mobile-lang-dropdown {
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    margin-top: 0;
+}
+
+.mobile-lang-dropdown .btn-lang {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+}
+
+.mobile-lang-dropdown .lang-menu {
+    top: 110%;
+    bottom: auto;
+    right: auto;
+    left: 0;
+    transform: translateY(10px);
+}
+
+.mobile-lang-dropdown .lang-menu.show {
+    transform: translateY(0);
 }
 
 .mobile-nav-close {
@@ -451,9 +478,6 @@ nav.scrolled {
     .pill-nav {
         display: none;
     }
-    .hamburger {
-        display: flex;
-    }
 }
 
 
@@ -469,28 +493,10 @@ nav.scrolled {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%), url('HintergrundBG.png') center/cover no-repeat;
 }
 
-#hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
 
-.hero-video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
-    z-index: 2;
-}
 
 /* --- Content remains on top --- */
 .hero-content {
@@ -4032,13 +4038,8 @@ footer {
     }
     
     /* Disable Video on Mobile to save GPU/CPU */
-    #hero-video {
-        display: none !important;
-    }
-    
-    .hero-video-overlay {
-        background: linear-gradient(to bottom, rgba(5,5,5,0.7) 0%, rgba(17,17,17,0.95) 100%), url('Brookahbild1_opt.jpg') center/cover no-repeat !important;
-        z-index: 2;
+    #hero {
+        background: linear-gradient(to bottom, rgba(5,5,5,0.7) 0%, rgba(17,17,17,0.95) 100%), url('HintergrundBGHandy.png') center/cover no-repeat !important;
     }
 
     /* Fixed Background colors to replace missing blur */
@@ -4046,20 +4047,20 @@ footer {
         background: rgba(10, 10, 10, 0.98) !important;
     }
 
-    /* Navbar Compression (Increased height for premium feel) */
+    /* Navbar Compression (Reduced height for more content space) */
     .logo img {
-        height: 42px !important;
+        height: 34px !important;
     }
     .nav-container {
-        padding: 20px 24px !important;
-        min-height: 80px !important;
+        padding: 12px 20px !important;
+        min-height: 64px !important;
         display: flex !important;
         align-items: center !important;
     }
 
     /* HERO REDESIGN (Responsive & Flow) */
     #hero {
-        padding-top: 150px !important; /* Space for the taller navbar */
+        padding-top: 100px !important; /* Adjusted for the smaller navbar */
         min-height: auto !important;
         display: block !important;
     }
@@ -4088,17 +4089,18 @@ footer {
         flex-wrap: nowrap !important;
         transform: none !important;
         margin: 0 !important;
-        padding: 10px 20px 30px !important;
+        padding: 10px 20px 40px !important; /* Extra bottom padding for shadows */
         overflow-x: auto !important;
         overflow-y: hidden !important;
         min-height: 480px !important;
-        scroll-snap-type: x mandatory;
-        gap: 15px;
-        -webkit-overflow-scrolling: touch;
-        z-index: 100 !important; /* Move to top of stack */
+        scroll-snap-type: x mandatory !important;
+        gap: 20px !important;
+        -webkit-overflow-scrolling: touch !important;
+        z-index: 100 !important;
         position: relative !important;
         pointer-events: auto !important;
         touch-action: pan-x !important;
+        scroll-padding-left: 20px; /* Aligns snap to the padding */
     }
     
     .cards-wrapper::-webkit-scrollbar {
@@ -4106,16 +4108,16 @@ footer {
     }
 
     .feature-card {
-        flex: 0 0 280px !important;
-        width: 280px !important;
-        min-height: 400px !important;
+        flex: 0 0 290px !important; /* Slightly larger for better readability */
+        width: 290px !important;
+        min-height: 420px !important;
         margin: 0 !important;
-        scroll-snap-align: center;
+        scroll-snap-align: start !important; /* Ensures it starts at card 1 */
         transform: none !important;
         opacity: 1 !important;
         filter: none !important;
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 20px !important;
+        border: 1px solid rgba(255,255,255,0.15) !important;
+        border-radius: 24px !important;
     }
 
     /* Remove fan-forced rotations */
