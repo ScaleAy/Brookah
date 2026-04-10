@@ -4030,21 +4030,21 @@ footer {
    MOBILE OPTIMIZATION (LAG KILLER & RESPONSIVENESS)
    ============================================================== */
 @media (max-width: 992px) {
-    /* Kill all lag-inducing filters globally */
+    /* Optimization: Natural transitions and essential glass effects */
     * {
-        -webkit-backdrop-filter: none !important;
-        backdrop-filter: none !important;
-        transition-duration: 0.1s !important; /* Faster transitions for responsiveness */
+        transition-duration: 0.3s !important; /* Smoother, natural luxury feel */
+    }
+    
+    .nav-container, .mobile-nav, .lang-menu, .modal-content, .shisha-skip-btn {
+        -webkit-backdrop-filter: blur(15px) !important;
+        backdrop-filter: blur(15px) !important;
+        background: rgba(10, 10, 10, 0.75) !important;
     }
     
     /* Disable Video on Mobile to save GPU/CPU */
     #hero {
-        background: linear-gradient(to bottom, rgba(5,5,5,0.7) 0%, rgba(17,17,17,0.95) 100%), url('HintergrundBGHandy.png') center/cover no-repeat !important;
-    }
-
-    /* Fixed Background colors to replace missing blur */
-    .modal-overlay, .nav-container, .shisha-skip-btn, .rec-modal-content, .mobile-nav, .lang-menu {
-        background: rgba(10, 10, 10, 0.98) !important;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(10,10,10,0.85) 100%), url('HintergrundBGHandy.png') center center / cover no-repeat fixed !important;
+        position: relative;
     }
 
     /* Navbar Compression (Reduced height for more content space) */
@@ -4067,12 +4067,12 @@ footer {
     
     .hero-content {
         padding: 0 10px !important;
-        pointer-events: none !important; /* Allow touch to pass through to cards */
+        pointer-events: auto !important; /* Ensure content is interactive */
         z-index: 5 !important;
     }
     
     .hero-content * {
-        pointer-events: auto !important; /* Re-enable buttons/links inside */
+        pointer-events: auto !important;
     }
 
     .hero-title {
@@ -4089,7 +4089,7 @@ footer {
         flex-wrap: nowrap !important;
         transform: none !important;
         margin: 0 !important;
-        padding: 10px 20px 40px !important; /* Extra bottom padding for shadows */
+        padding: 10px 20px 40px !important;
         overflow-x: auto !important;
         overflow-y: hidden !important;
         min-height: 480px !important;
@@ -4099,8 +4099,8 @@ footer {
         z-index: 100 !important;
         position: relative !important;
         pointer-events: auto !important;
-        touch-action: pan-x !important;
-        scroll-padding-left: 20px; /* Aligns snap to the padding */
+        touch-action: pan-x pan-y !important; /* RESTORED: Allows vertical page scrolling */
+        scroll-padding-left: 20px;
     }
     
     .cards-wrapper::-webkit-scrollbar {
@@ -4108,16 +4108,21 @@ footer {
     }
 
     .feature-card {
-        flex: 0 0 290px !important; /* Slightly larger for better readability */
+        flex: 0 0 290px !important;
         width: 290px !important;
         min-height: 420px !important;
-        margin: 0 !important;
-        scroll-snap-align: start !important; /* Ensures it starts at card 1 */
+        margin: 10px 0 !important; /* Add slight margin to prevent border clipping */
+        scroll-snap-align: start !important;
         transform: none !important;
         opacity: 1 !important;
         filter: none !important;
         border: 1px solid rgba(255,255,255,0.15) !important;
         border-radius: 24px !important;
+    }
+    
+    /* Disable shine effects on mobile to prevent "stray line" glitch */
+    .feature-card::before, .feature-card::after {
+        display: none !important;
     }
 
     /* Remove fan-forced rotations */
