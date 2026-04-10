@@ -86,8 +86,8 @@ const shishas = [
         shortDesc: { de: "Süße Wassermelone trifft auf Kaugummi.", en: "Sweet watermelon meets bubblegum.", tr: "Tatlı karpuz sakızla buluşuyor.", es: "Sandía dulce con chicle.", ar: "بطيخ حلو مع علكة." },
         glow: "#e91e8c", emoji: "🍉", gradient: "linear-gradient(135deg, #2a0018 0%, #1a000f 100%)",
         flavors: ["Wassermelone", "Kaugummi", "Süß"],
-        img: "WatermelonIceHochkant.png",
-        previewImg: "WatermeloniceBreit.png"
+        img: "BonnienadClydeBreitKochkant.png",
+        previewImg: "BonnienadClydeBreit.png"
     },
     {
         name: "Hamburg", category: "Modern", intensity: 2,
@@ -96,8 +96,8 @@ const shishas = [
         shortDesc: { de: "Frischer Apfel mit süßen Beeren.", en: "Fresh apple with sweet berries.", tr: "Taze elma ve tatlı meyveler.", es: "Manzana fresca con bayas dulces.", ar: "تفاح طازج مع توت حلو." },
         glow: "#e53935", emoji: "🍎", gradient: "linear-gradient(135deg, #1a0505 0%, #0d0808 100%)",
         flavors: ["Apfel", "Beere", "Frisch"],
-        img: "AfricanQueenCardHochkant.png",
-        previewImg: "AfricanQueenBreit.png"
+        img: "HamburgCardBreit.pngKochkant.png",
+        previewImg: "HamburgCardBreit.png"
     },
     {
         name: "Love 66", category: "Modern", intensity: 2,
@@ -106,8 +106,8 @@ const shishas = [
         shortDesc: { de: "Verführerische Erdbeere mit Vanille.", en: "Seductive strawberry with vanilla.", tr: "Büyüleyici çilek ve vanilya.", es: "Fresa seductora con vainilla.", ar: "فراولة ساحرة مع فانيليا." },
         glow: "#e91e63", emoji: "🍓", gradient: "linear-gradient(135deg, #2a0010 0%, #1a0008 100%)",
         flavors: ["Erdbeere", "Vanille", "Süß"],
-        img: "SternStaubHochkant.png",
-        previewImg: "SternstaubBreit.png"
+        img: "Love66BreitKochkant.png",
+        previewImg: "Love66Breit.png"
     },
     {
         name: "Zitrone Minze", category: "Modern", intensity: 2,
@@ -116,8 +116,8 @@ const shishas = [
         shortDesc: { de: "Spritzige Zitrone mit kühler Minze.", en: "Zesty lemon with cool mint.", tr: "Ferahlatıcı limon ve serin nane.", es: "Limón refrescante con menta fría.", ar: "ليمون منعش مع نعناع بارد." },
         glow: "#cddc39", emoji: "🍋", gradient: "linear-gradient(135deg, #1a1a00 0%, #0d0d00 100%)",
         flavors: ["Zitrone", "Minze", "Kühl"],
-        img: "KaugummiMinzeCardHochkant.png",
-        previewImg: "KaugummiMinzeDoppelApfel.png"
+        img: "ZitroneMinzueKochkant.png",
+        previewImg: "ZitroneMinnzeCard.png"
     },
     {
         name: "Löwenherz", category: "Traditionell", intensity: 4,
@@ -126,8 +126,8 @@ const shishas = [
         shortDesc: { de: "Kräftiger Apfel mit starker Minze.", en: "Bold apple with powerful mint.", tr: "Güçlü elma ve kuvvetli nane.", es: "Manzana fuerte con menta intensa.", ar: "تفاح قوي مع نعناع مكثف." },
         glow: "#ffc107", emoji: "🦁", gradient: "linear-gradient(135deg, #1a1000 0%, #0d0800 100%)",
         flavors: ["Apfel", "Minze", "Stark"],
-        img: "DoppeltApfelCardHochkant.png",
-        previewImg: "ShishaBreitDoppelApfel.png"
+        img: "ShishaLöwenHerzlKochkant.png",
+        previewImg: "Löwenherzbreitcard.png"
     },
     {
         name: "Persischer Apfel", category: "Traditionell", intensity: 3,
@@ -136,8 +136,8 @@ const shishas = [
         shortDesc: { de: "Klassischer Apfel mit Rosenaroma.", en: "Classic apple with rose aroma.", tr: "Klasik elma ve gül aroması.", es: "Manzana clásica con aroma a rosa.", ar: "تفاح كلاسيكي بعطر الورد." },
         glow: "#ff7043", emoji: "🍏", gradient: "linear-gradient(135deg, #1a0800 0%, #0d0400 100%)",
         flavors: ["Apfel", "Rose", "Traditionell"],
-        img: "DoppeltApfelCardHochkant.png",
-        previewImg: "ShishaBreitDoppelApfel.png"
+        img: "ShishaPerrsicherApfelKochkant.png",
+        previewImg: "perrsicherapfelbreitcard.png"
     }
 ];
 

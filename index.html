@@ -10,7 +10,7 @@
     <meta property="og:title" content="Brookah Lounge | Premium Shisha in Gaildorf">
     <meta property="og:description" content="Brookah Lounge – Wo der Abend beginnt. Entdecke unsere Shisha- und Getränkekarte.">
     
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23e8c97a'/></svg>">
+    <link rel="icon" type="image/png" href="LogoFavicon.png">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,31 +39,6 @@
 
             <!-- Right: Action & Mobile -->
             <div class="nav-right">
-                <div class="lang-dropdown">
-                    <button class="btn-lang" id="lang-btn">
-                        <img src="https://flagcdn.com/w40/de.png" style="width:18px;height:13px;margin-right:8px;border-radius:2px;object-fit:cover;" id="current-lang-flag" alt="DE">
-                        <span id="current-lang-code">DE</span> 
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="lang-chevron" stroke="currentColor" stroke-width="2" style="margin-left: 4px;"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="lang-menu" id="lang-menu">
-                        <div class="lang-option" data-lang="de">
-                            <img src="https://flagcdn.com/w40/de.png" width="18" height="13" alt="DE" style="object-fit:cover;"> Deutsch
-                        </div>
-                        <div class="lang-option" data-lang="en">
-                            <img src="https://flagcdn.com/w40/gb.png" width="18" height="13" alt="EN" style="object-fit:cover;"> English
-                        </div>
-                        <div class="lang-option" data-lang="tr">
-                            <img src="https://flagcdn.com/w40/tr.png" width="18" height="13" alt="TR" style="object-fit:cover;"> Türkçe
-                        </div>
-                        <div class="lang-option" data-lang="es">
-                            <img src="https://flagcdn.com/w40/es.png" width="18" height="13" alt="ES" style="object-fit:cover;"> Español
-                        </div>
-                        <div class="lang-option" data-lang="ar">
-                            <img src="https://flagcdn.com/w40/ae.png" width="18" height="13" alt="AR" style="object-fit:cover;"> العربية
-                        </div>
-                    </div>
-                </div>
-                
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -89,16 +64,38 @@
              <a href="#getraenke" class="nav-link-m" data-i18n="nav_drinks">Getränke</a>
              <a href="#oeffnungszeiten" class="nav-link-m" data-i18n="nav_hours">Öffnungszeiten</a>
              <a href="#instagram" class="nav-link-m" data-i18n="nav_insta">Instagram</a>
+
+             <!-- Mobile Language Selection -->
+             <div class="lang-dropdown mobile-lang-dropdown">
+                 <button class="btn-lang" id="lang-btn">
+                     <img src="https://flagcdn.com/w40/de.png" style="width:18px;height:13px;margin-right:8px;border-radius:2px;object-fit:cover;" id="current-lang-flag" alt="DE">
+                     <span id="current-lang-code">DE</span> 
+                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" class="lang-chevron" stroke="currentColor" stroke-width="2" style="margin-left: 4px;"><path d="M6 9l6 6 6-6"/></svg>
+                 </button>
+                 <div class="lang-menu" id="lang-menu">
+                     <div class="lang-option" data-lang="de">
+                         <img src="https://flagcdn.com/w40/de.png" width="18" height="13" alt="DE" style="object-fit:cover;"> Deutsch
+                     </div>
+                     <div class="lang-option" data-lang="en">
+                         <img src="https://flagcdn.com/w40/gb.png" width="18" height="13" alt="EN" style="object-fit:cover;"> English
+                     </div>
+                     <div class="lang-option" data-lang="tr">
+                         <img src="https://flagcdn.com/w40/tr.png" width="18" height="13" alt="TR" style="object-fit:cover;"> Türkçe
+                     </div>
+                     <div class="lang-option" data-lang="es">
+                         <img src="https://flagcdn.com/w40/es.png" width="18" height="13" alt="ES" style="object-fit:cover;"> Español
+                     </div>
+                     <div class="lang-option" data-lang="ar">
+                         <img src="https://flagcdn.com/w40/ae.png" width="18" height="13" alt="AR" style="object-fit:cover;"> العربية
+                     </div>
+                 </div>
+             </div>
         </div>
     </nav>
 
     <!-- HERO -->
     <section id="hero">
-        <video autoplay muted loop playsinline id="hero-video" poster="Brookahbild1_opt.jpg" src="BrookahHomeVideo.mov">
-            <source src="BrookahHomeVideo.mov" type="video/quicktime">
-        </video>
-        <div class="hero-video-overlay"></div>
-        <div class="container hero-content" style="width: 100%; max-width: 1300px;">
+        <div class="container hero-content">
             <h1 class="hero-title reveal" data-i18n="head_brand" style="text-shadow: 0 10px 30px rgba(0,0,0,0.8); font-family: 'Cormorant Garamond', serif; font-weight: 700; letter-spacing: 12px; font-size: 6rem;">BROOKAH</h1>
             
             <div class="cards-wrapper">
